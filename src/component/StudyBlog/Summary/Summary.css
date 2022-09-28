@@ -23,12 +23,16 @@
     padding-top: 10px;
     margin-left: 20px;
 }
+.break-time a{
+    text-decoration: none;
+    color: black;
+}
 
-.input-field{
+.field{
     border: 0;
     background-color: whitesmoke;
     margin-top: 20px;
-    padding: 10px 60px;
+    padding: 10px 30px;
 }
 
 .active-btn{

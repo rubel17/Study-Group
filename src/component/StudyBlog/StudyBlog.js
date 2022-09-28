@@ -8,26 +8,36 @@ import Summary from './Summary/Summary';
 
 const StudyBlog = () => {
     const[carts, setCarts]=useState([]);
+    const [studyTime, setStudyTime]=useState(0);
 
     useEffect(()=>{
         fetch('active.json')
         .then(res =>res.json())
         .then(data=>setCarts(data))
     },[]);
+
+    const handleAddToCart =(cart) =>{
+        const newStudyTime =studyTime + cart.time;
+        setStudyTime(newStudyTime);
+    }
     return (
         <div className="study-blog">
            <div>
             <h3 className='blog-name text-primary'><FontAwesomeIcon icon={faBookReader}></FontAwesomeIcon> Student Study Active</h3>
            <div  className="card-container">
               {
-                    carts.map(cart=> <Cart key={cart.id} cart={cart} ></Cart>)
+                    carts.map(cart=> <Cart 
+                        key={cart.id}
+                         cart={cart} 
+                         handleAddToCart ={handleAddToCart}
+                         ></Cart>)
                 }
              
             </div>
            </div>
             <div className="summary-container">
              
-           <Summary></Summary>
+           <Summary studyTime={studyTime} ></Summary>
             </div>
         </div>
     );

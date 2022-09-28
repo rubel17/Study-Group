@@ -4,71 +4,71 @@
     "index": 0,
     "img": "img/teacher.jpeg" ,
     "age": 35,
-    "name": "Sofia Schultz",
+    "name": "Teacher",
     "gender": "female",
     "company": "NORALEX",
     "email": "sofiaschultz@noralex.com",
     "phone": "+1 (841) 504-2999",
-    "time": "20s"
+    "time": 30
   },
   {
     "id": "63347206ab95ce6f63f47fcd",
     "index": 1,
     "img": "img/kids.jpeg",
     "age": 26,
-    "name": "Briggs Kirk",
+    "name": "Kids",
     "gender": "male",
     "company": "GEEKOL",
     "email": "briggskirk@geekol.com",
     "phone": "+1 (916) 419-2193",
-    "time": "20s"
+    "time": 10
   },
   {
     "id": "63347206ec05f3cb848ed25c",
     "index": 2,
     "img": "img/istockphoto.jpeg",
     "age": 38,
-    "name": "Pratt William",
-    "gender": "male",
+    "name": "Study Status",
+    "gender": "female",
     "company": "XYQAG",
     "email": "prattwilliam@xyqag.com",
     "phone": "+1 (886) 554-3257",
-    "time": "20s"
+    "time": 60
   },
   {
     "id": "6334720640934126e0432600",
     "index": 3,
     "img": "img/girl.jpeg",
     "age": 34,
-    "name": "Bradshaw Wheeler",
+    "name": "Home Study",
     "gender": "male",
     "company": "BEDDER",
     "email": "bradshawwheeler@bedder.com",
     "phone": "+1 (980) 459-2223",
-    "time": "20s"
+    "time": 20
   },
   {
     "id": "633472065ec5273c45f9b9e5",
     "index": 4,
     "img": "img/man.jpeg",
     "age": 38,
-    "name": "Camacho Hines",
+    "name": "Man Study",
     "gender": "male",
     "company": "OCEANICA",
     "email": "camachohines@oceanica.com",
     "phone": "+1 (982) 507-2269",
-    "time": "20s"
+    "time": 50
   },
   {
     "id": "63347206883f4cb2a8fd9102",
     "index": 5,
     "img": "img/children.jpeg",
     "age": 32,
-    "name": "Inez Chan",
+    "name": "Children Study",
     "gender": "female",
     "company": "EZENTIA",
     "email": "inezchan@ezentia.com",
     "phone": "+1 (985) 594-2503",
-    "time": "20s"
+    "time": 40
   }
 ]

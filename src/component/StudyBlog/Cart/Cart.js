@@ -2,18 +2,18 @@ import './Cart.css'
 
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart,handleAddToCart}) => {
     const { img, name, time} =cart;
-    console.log(cart);
+
     return (
         <div>
             
-             <div class="card">
-                <img src={img} class="card-img-top w-100 h-75" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">{name}</h5>
-                    <h6>Time required : {time}</h6>
-                    <button className='btn btn-primary w-100'>Add To List</button>
+             <div className="card">
+                <img src={img} className="card-img-top w-100 h-75" alt="" />
+                <div className="card-body">
+                    <h5 className="card-title">{name}</h5>
+                    <h6>Time required : {time}s</h6>
+                    <button onClick={()=>handleAddToCart(cart)} className='btn btn-primary w-100'>Add To List</button>
                 
             </div>
             </div>

@@ -2,7 +2,9 @@ import React from 'react';
 import './Summary.css';
 import pic from "../../../img/rubel.jpg";
 
-const Summary = () => {
+const Summary = ({studyTime}) => {
+    // console.log(studyTime);
+    
     return (
         <div className='mx-3'>
              <div className='d-flex mt-3 align-items-center'>
@@ -32,25 +34,24 @@ const Summary = () => {
                 <h4>Add A Break</h4>
                 <div className='all-break-time d-flex'>
                     <div>
-                        <h5 className='break-time'>10s</h5>
+                        <h5 className='break-time'><a href="/home">10s</a></h5>
                     </div>
                     <div>
-                        <h5 className='break-time'>20s</h5>
+                        <h5 className='break-time'><a href="/home">20s</a></h5>
                     </div>
                     <div>
-                        <h5 className='break-time'>30s</h5>
+                        <h5 className='break-time'><a href="/home">30s</a></h5>
                     </div>
                     <div>
-                        <h5 className='break-time'>40s</h5>
+                        <h5 className='break-time'><a href="/home">40s</a></h5>
                     </div>
                 </div>
              </div>
 
              <div className='mt-4'>
-                <h5>Exercise Details</h5>
-                <input  placeholder='Exercise time: 0 seconds' className='input-field' type="text" />
-
-                <input placeholder='Break time: 0 seconds' className='input-field' type="text" />
+                <h5>Study Details</h5>
+                <h5 className='field'>Study Time : <small>{studyTime}</small> Seconds</h5>
+                <h5 className='field'>Break Time : <small>0</small> Seconds</h5>
 
              </div>
              <div>
