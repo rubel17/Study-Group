@@ -26,6 +26,7 @@ const StudyBlog = () => {
             </div>
            </div>
             <div className="summary-container">
+             
            <Summary></Summary>
             </div>
         </div>
