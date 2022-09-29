@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Summary.css';
 import pic from "../../../img/rubel.jpg";
+import BreakTime from './BreakTime/BreakTime';
 
 const Summary = ({studyTime}) => {
     // console.log(studyTime);
+    const [breakTimes, setBreakTimes]=useState([]);
+    const [time, setTime]=useState(0);
+    useEffect(()=>{
+        fetch('breakTime.json')
+        .then(res=>res.json())
+        .then(data=>setBreakTimes(data))
+    },[]);
+
+    const handleAddBreakTime = (time) =>{
+        setTime(time);
+    }
     
     return (
         <div className='mx-3'>
@@ -33,25 +45,23 @@ const Summary = ({studyTime}) => {
              <div className='mt-4'>
                 <h4>Add A Break</h4>
                 <div className='all-break-time d-flex'>
-                    <div>
-                        <h5 className='break-time'><a href="/home">10s</a></h5>
-                    </div>
-                    <div>
-                        <h5 className='break-time'><a href="/home">20s</a></h5>
-                    </div>
-                    <div>
-                        <h5 className='break-time'><a href="/home">30s</a></h5>
-                    </div>
-                    <div>
-                        <h5 className='break-time'><a href="/home">40s</a></h5>
-                    </div>
+                   {
+                    breakTimes.map(breakTime=> <BreakTime 
+                        key={breakTime.id} 
+                        breakTime={breakTime}
+                        handleAddBreakTime={handleAddBreakTime}
+                        ></BreakTime>
+                    )
+                   }
+                    
+                    
                 </div>
              </div>
 
              <div className='mt-4'>
                 <h5>Study Details</h5>
-                <h5 className='field'>Study Time : <small>{studyTime}</small> Seconds</h5>
-                <h5 className='field'>Break Time : <small>0</small> Seconds</h5>
+                <h5 className='field'>Study Time : <small>{studyTime} Seconds</small> </h5>
+                <h5 className='field'>Break Time : <small>{time} Seconds</small> </h5>
 
              </div>
              <div>
