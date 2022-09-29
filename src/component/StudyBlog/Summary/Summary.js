@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './Summary.css';
 import pic from "../../../img/rubel.jpg";
 import BreakTime from './BreakTime/BreakTime';
 import { addToDb, getTimeDb} from '../../FakeDb/fakedb';
-
-
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Summary.css';
 
 const Summary = ({studyTime}) => {
     const [breakTimes, setBreakTimes]=useState([]);
@@ -28,8 +28,14 @@ const Summary = ({studyTime}) => {
         addToDb(time);
         setTime(time);
     }
+
+    const notify = () => {
+        // alert('alert');
+        toast('All Activity Completed', {position:toast.POSITION.TOP_CENTER});
+    }
     
     return (
+        
         <div className='mx-3'>
              <div className='d-flex mt-3 align-items-center'>
                 <img className='summary-img me-3' src={pic} alt="" />
@@ -77,9 +83,11 @@ const Summary = ({studyTime}) => {
 
              </div>
              <div>
-                <button className='active-btn btn btn-primary'>Activity Completed</button>
+                <button onClick={notify} className='active-btn btn btn-primary'>Activity Completed</button>
              </div>
+             <ToastContainer/>
         </div>
+        
     );
 };
 

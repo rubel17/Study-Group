@@ -37,7 +37,7 @@ const StudyBlog = () => {
            </div>
             <div className="summary-container">
              
-           <Summary studyTime={studyTime} ></Summary>
+           <Summary studyTime={studyTime} path></Summary>
             </div>
         </div>
     );
