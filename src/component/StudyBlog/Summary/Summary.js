@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Summary.css';
 import pic from "../../../img/rubel.jpg";
 import BreakTime from './BreakTime/BreakTime';
-import { addToDb, getStoredTime } from '../../FakeDb/fakedb';
+import { addToDb, getTimeDb} from '../../FakeDb/fakedb';
+
 
 
 const Summary = ({studyTime}) => {
-    // console.log(studyTime);
     const [breakTimes, setBreakTimes]=useState([]);
     const [time, setTime]=useState(0);
     useEffect(()=>{
@@ -16,17 +16,16 @@ const Summary = ({studyTime}) => {
     },[]);
 
     useEffect(()=>{
-        const getTimeDb =getStoredTime();
-        // const addTimeToCart=[];
-        for(const id in getTimeDb){
-            setTime(id);
-            // addTimeToCart.push(id);
-        }
-        // setTime(addTimeToCart);
+       const data = getTimeDb();
+      for(const id in data){
+        setTime(id);
+      }
+        
+        
     },[])
 
     const handleAddBreakTime = (time) =>{
-       addToDb(time);
+        addToDb(time);
         setTime(time);
     }
     
