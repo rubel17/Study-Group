@@ -9,12 +9,14 @@ import './Summary.css';
 const Summary = ({studyTime}) => {
     const [breakTimes, setBreakTimes]=useState([]);
     const [time, setTime]=useState(0);
+    //just break time and id json fetch
     useEffect(()=>{
         fetch('breakTime.json')
         .then(res=>res.json())
         .then(data=>setBreakTimes(data))
     },[]);
 
+    //get data from localstorage 
     useEffect(()=>{
        const data = getTimeDb();
       for(const id in data){
@@ -23,15 +25,21 @@ const Summary = ({studyTime}) => {
         
         
     },[])
-
+//break button handle
     const handleAddBreakTime = (time) =>{
         addToDb(time);
         setTime(time);
     }
 
-    const notify = () => {
-        // alert('alert');
-        toast('All Activity Completed', {position:toast.POSITION.TOP_CENTER});
+    const notify = ({time}) => {
+        //Data ok ,toast open.
+        if(time){
+            toast('All Activity Completed', {position:toast.POSITION.TOP_CENTER});
+        }
+        //Data missing,alert show.
+        else{
+            alert('Break Time Missing');
+        }
     }
     
     return (
@@ -83,7 +91,7 @@ const Summary = ({studyTime}) => {
 
              </div>
              <div>
-                <button onClick={notify} className='active-btn btn btn-primary'>Activity Completed</button>
+                <button onClick={()=>notify({time})} className='active-btn btn btn-primary'>Activity Completed</button>
              </div>
              <ToastContainer/>
         </div>

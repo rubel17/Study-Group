@@ -28,7 +28,7 @@ const Question = () => {
             <div>
                 <h3 className='text-primary'>3.What does useEffect do</h3>
                 <p className='text-danger ms-3'>
-                    *  Sometimes, we want to run some additional code after React has updated the DOM. Network requests, manual DOM mutations, and logging are common examples of effects that don’t require a cleanup. We say that because we can run them and immediately forget about them. <br />
+                    *  Sometimes, we want to run some additional code after React has updated the DOM. Network requests, manual DOM mutations, and logging are common examples of effects that donot require a cleanup. We say that because we can run them and immediately forget about them. <br />
                      * Every time a React components finish rendering, useEffect run unless you specified dependencies in the dependencies array. <br />
                      *  When we want to fetch data based on passed parameter, we can updated this parameter from client side. Once the parameter is updated to new data , useEffect hook will be re-called.
                 </p>
