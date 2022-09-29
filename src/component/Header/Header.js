@@ -1,8 +1,9 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => {
     return (
-        <nav className='text-danger bg-dark text-center p-3'>
+        <nav className='header text-danger bg-dark text-center p-3'>
             <h1>Welcome To Study Group</h1>
          </nav>
     );

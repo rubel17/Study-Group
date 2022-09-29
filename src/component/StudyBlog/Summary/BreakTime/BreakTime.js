@@ -7,7 +7,7 @@ const BreakTime = (props) => {
     const {time}=props.breakTime;
     return (
         <div className='all-break-time'>
-            <button className='break-time' onClick={()=>handleAddBreakTime(time)} >{time}</button>
+            <button className='break-time' onClick={()=>handleAddBreakTime(time)} >{time}s</button>
         </div>
     );
 };
